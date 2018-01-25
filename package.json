@@ -1,0 +1,45 @@
+{
+  "name": "cache-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/cache_manager.js",
+  "scripts": {
+    "test": "mocha --timeout 3600000 --compilers js:babel-core/register spec/*.test.js",
+    "test:watch": "mocha -w -c --timeout 40000 --compilers js:babel-core/register spec/*.test.js",
+    "lint": "node_modules/.bin/eslint src",
+    "lint:fix": "node_modules/.bin/eslint --fix src",
+    "coverage": "node_modules/.bin/babel-node node_modules/.bin/babel-istanbul cover node_modules/.bin/_mocha -- --timeout 36000 -R spec spec/**/*.test.js",
+    "build": "babel ./src --out-dir ./lib",
+    "release": "./node_modules/.bin/release-it --non-interactive"
+  },
+  "keywords": [
+    "node",
+    "aws",
+    "redis"
+  ],
+  "author": "Ardeshir Eshghi",
+  "dependencies": {
+    "async": "^2.3.0",
+    "aws-sdk": "^2.16.0",
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.21.0",
+    "bluebird": "^3.4.7",
+    "colors": "^1.1.2",
+    "exceljs": "^0.4.12",
+    "git-release": "^0.6.0",
+    "lodash": "^4.17.4",
+    "release-it": "^2.6.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-istanbul": "^0.12.1",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-watch": "^2.0.5",
+    "chai": "^3.5.0",
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb-base": "^11.1.2",
+    "eslint-plugin-import": "^2.2.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0"
+  }
+}

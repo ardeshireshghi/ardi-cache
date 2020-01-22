@@ -4,11 +4,11 @@
   "description": "",
   "main": "lib/cache_manager.js",
   "scripts": {
-    "test": "mocha --timeout 3600000 --compilers js:babel-core/register spec/*.test.js",
-    "test:watch": "mocha -w -c --timeout 40000 --compilers js:babel-core/register spec/*.test.js",
+    "test": "mocha --timeout 3600000 --require babel-core/register \"spec/**/*.test.js\"",
+    "test:watch": "mocha -w -c --timeout 40000 --require babel-core/register \"spec/**/*.test.js\"",
     "lint": "node_modules/.bin/eslint src",
     "lint:fix": "node_modules/.bin/eslint --fix src",
-    "coverage": "node_modules/.bin/babel-node node_modules/.bin/babel-istanbul cover node_modules/.bin/_mocha -- --timeout 36000 -R spec spec/**/*.test.js",
+    "coverage": "node_modules/.bin/babel-node node_modules/.bin/babel-istanbul cover node_modules/.bin/_mocha -- --timeout 36000 -R spec \"spec/**/*.test.js\"",
     "build": "babel ./src --out-dir ./lib",
     "release": "./node_modules/.bin/release-it --non-interactive"
   },
@@ -25,14 +25,15 @@
     "babel-core": "^6.21.0",
     "bluebird": "^3.4.7",
     "colors": "^1.1.2",
-    "exceljs": "^0.4.12",
+    "exceljs": "^3.6.0",
     "git-release": "^0.6.0",
-    "lodash": "^4.17.4",
-    "release-it": "^2.6.0"
+    "lodash": "^4.17.15",
+    "release-it": "^12.4.3"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-istanbul": "^0.12.1",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-es2017": "^6.24.1",
     "babel-watch": "^2.0.5",
     "chai": "^3.5.0",
@@ -40,6 +41,7 @@
     "eslint-config-airbnb-base": "^11.1.2",
     "eslint-plugin-import": "^2.2.0",
     "istanbul": "^0.4.5",
-    "mocha": "^3.2.0"
+    "mocha": "^7.0.0",
+    "sinon": "^8.1.0"
   }
 }

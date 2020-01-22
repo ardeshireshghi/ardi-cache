@@ -10,7 +10,7 @@ export default class S3Store {
     this.setConnection(connection || this._createConnection());
   }
 
-  put(key, value, minutes = 0) {
+  put(key, value) {
     if (typeof value === 'object') {
       value = JSON.stringify(value);
     }

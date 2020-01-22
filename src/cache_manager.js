@@ -1,11 +1,11 @@
-import config from './config';
+import defaultConfig from './config';
 import CacheRepository from './repository';
 import S3Store from './stores/s3';
 import ObjectStore from './stores/object';
 
-export class CacheManager {
+class CacheManager {
   constructor(props = {}) {
-    this.config = props.config || config;
+    this.config = props.config || defaultConfig;
     this.stores = props.stores || {};
   }
 
@@ -52,16 +52,12 @@ export class CacheManager {
   }
 }
 
-let cacheManagerInstance;
+const cacheManager = (conf) => {
+  const cacheConfig = conf || defaultConfig;
 
-export default function cacheManager(conf) {
-  if (!cacheManagerInstance) {
-    const cacheConfig = conf || config;
+  return new CacheManager({
+    config: cacheConfig
+  });
+};
 
-    cacheManagerInstance = new CacheManager({
-      config: cacheConfig
-    });
-  }
-
-  return cacheManagerInstance;
-}
+export default cacheManager;

@@ -3,5 +3,6 @@
     "targets": {
       "node": true
     }
-  }]]
+  }]],
+  "plugins": ["add-module-exports"]
 }

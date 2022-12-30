@@ -28,7 +28,7 @@
     "exceljs": "^3.6.0",
     "git-release": "^0.6.0",
     "lodash": "^4.17.15",
-    "release-it": "^12.4.3"
+    "release-it": "^15.6.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -42,7 +42,7 @@
     "eslint-config-airbnb-base": "^11.1.2",
     "eslint-plugin-import": "^2.2.0",
     "istanbul": "^0.4.5",
-    "mocha": "^7.0.0",
+    "mocha": "^10.2.0",
     "sinon": "^8.1.0"
   }
 }
